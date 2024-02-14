@@ -1,14 +1,21 @@
 // app.js
 
 const express = require('express');
+const cors = require('cors');  // Importa el paquete cors
 const fs = require('fs');
 const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
+// Usa el middleware cors
+app.use(cors());
+
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+// Resto del código de tu API...
+
 
 // Lee el archivo products.json
 const productsFilePath = path.join(__dirname, 'productos.json');
